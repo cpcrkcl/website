@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Outfit", sans-serif;
   background: var(--navy);
@@ -71,6 +75,7 @@ nav {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
+  z-index: 10;
 }
 
 .logo {
@@ -85,6 +90,20 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 0.5rem;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 nav a {
@@ -106,6 +125,10 @@ nav a.active {
 .hero {
   text-align: center;
   padding: 3rem 0 4.5rem;
+}
+
+section {
+  scroll-margin-top: 110px;
 }
 
 .hero h1,
@@ -279,15 +302,51 @@ footer a:hover {
 
 @media (max-width: 700px) {
   nav {
-    justify-content: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0.65rem;
   }
 
-  nav ul {
+  .nav-links {
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
   }
 
   .hero {
     padding-top: 1.5rem;
+  }
+
+  .mobile-compact .nav-toggle {
+    display: inline-flex;
+  }
+
+  .mobile-compact .nav-links {
+    display: none;
+  }
+
+  .mobile-compact.menu-open .nav-links {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    left: 0;
+    right: 0;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    background: rgba(15, 23, 42, 0.92);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    gap: 0.5rem;
+  }
+
+  .mobile-compact.menu-open .nav-links li {
+    width: 100%;
+  }
+
+  .mobile-compact.menu-open .nav-links a {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }

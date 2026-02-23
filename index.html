@@ -14,61 +14,195 @@
   <div class="bg-grid"></div>
 
   <div class="container">
-    <nav>
-      <a href="index.html" class="logo">Christopher Rego</a>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
+    <nav id="site-nav">
+      <a href="#home" class="logo">Christopher Rego</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        &#9776;
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="home">
       <h1>Student Portfolio</h1>
       <p>
         I am a student focused on learning, building useful projects, and growing
         my skills through hands-on work.
       </p>
       <div class="buttons">
-        <a href="about.html" class="btn btn-primary">About Me</a>
-        <a href="resume.html" class="btn btn-glass">View Resume</a>
+        <a href="#about" class="btn btn-primary">About Me</a>
+        <a href="#resume" class="btn btn-glass">View Resume</a>
       </div>
+    </section>
+
+    <section class="title-block" id="about">
+      <h2 class="page-title">About Me</h2>
+      <p class="page-subtitle">
+        I am a motivated student with an interest in technology, practical
+        problem-solving, and creating clean user experiences.
+      </p>
     </section>
 
     <section class="grid">
       <article class="card">
-        <h2>About Me</h2>
+        <h2>Who I Am</h2>
         <p>
-          Get to know my background, academic focus, and what I am currently
-          working toward as a student.
+          I enjoy building polished web projects and applying what I learn in
+          class to real-world work. I value consistency, reliability, and
+          communication in every project.
         </p>
-        <p><a class="btn btn-glass" href="about.html">Read More</a></p>
       </article>
 
       <article class="card">
-        <h2>Resume</h2>
+        <h2>Academic Focus</h2>
         <p>
-          Review my education, project experience, technical skills, and relevant
-          achievements in one place.
+          My focus includes software fundamentals, web development, and
+          hands-on project work that helps me grow both technically and
+          professionally.
         </p>
-        <p><a class="btn btn-glass" href="resume.html">Open Resume</a></p>
       </article>
 
       <article class="card">
-        <h2>Contact</h2>
-        <p>
-          Reach out for internships, collaborations, campus opportunities, or
-          other professional conversations.
-        </p>
-        <p><a class="btn btn-glass" href="contact.html">Contact Me</a></p>
+        <h2>Interests</h2>
+        <ul>
+          <li>Front-end development and UI design</li>
+          <li>Building portfolio-ready student projects</li>
+          <li>Internship and collaboration opportunities</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="title-block" id="resume">
+      <h2 class="page-title">Resume</h2>
+      <p class="page-subtitle">
+        Education, project experience, and skills in one place.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Education</h2>
+        <div class="timeline-item">
+          <h3>Your School / University</h3>
+          <span class="meta">Expected Graduation: 20XX</span>
+          <p>Major: Your Major</p>
+          <p>Relevant Coursework: Web Development, Programming, Data Structures</p>
+        </div>
+      </article>
+      <article class="card">
+        <h2>Experience</h2>
+        <div class="timeline-item">
+          <h3>Student Project / Internship Role</h3>
+          <span class="meta">Month 20XX - Present</span>
+          <ul>
+            <li>Built and maintained responsive project pages.</li>
+            <li>Collaborated with peers to design and ship features.</li>
+            <li>Improved readability and usability across screens.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Git and GitHub</li>
+          <li>Problem-solving and debugging</li>
+          <li>Communication and teamwork</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="title-block" id="contact">
+      <h2 class="page-title">Contact</h2>
+      <p class="page-subtitle">
+        Open to internships, student opportunities, and collaborations.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Send a Message</h2>
+        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me a little about your message..." required></textarea>
+
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </article>
+      <article class="card">
+        <h2>Quick Contact</h2>
+        <p>Email: youremail@example.com</p>
+        <p>LinkedIn: linkedin.com/in/yourname</p>
+        <p>GitHub: github.com/yourname</p>
       </article>
     </section>
 
     <footer>
       <p>&copy; 2026 Christopher Rego. Student Portfolio.</p>
-      <a href="contact.html">Let&apos;s Connect</a>
+      <a href="#home">Back to Top</a>
     </footer>
   </div>
+
+  <script>
+    const body = document.body;
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const links = navLinks.querySelectorAll("a");
+
+    function updateMobileNavMode() {
+      const isMobile = window.innerWidth <= 700;
+      const scrolledFar = window.scrollY > 260;
+
+      if (isMobile && scrolledFar) {
+        body.classList.add("mobile-compact");
+      } else {
+        body.classList.remove("mobile-compact", "menu-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    function setActiveLink() {
+      const fromTop = window.scrollY + 140;
+      links.forEach((link) => {
+        const section = document.querySelector(link.getAttribute("href"));
+        if (!section) return;
+        const inSection =
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop;
+        link.classList.toggle("active", inSection);
+      });
+    }
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = body.classList.toggle("menu-open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        body.classList.remove("menu-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      updateMobileNavMode();
+      setActiveLink();
+    });
+    window.addEventListener("resize", updateMobileNavMode);
+
+    updateMobileNavMode();
+    setActiveLink();
+  </script>
 </body>
 </html>
