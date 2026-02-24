@@ -115,11 +115,10 @@
     <section class="grid">
       <article class="card">
         <h2>Send a Message</h2>
-        <form action="https://formsubmit.co/contact@christopherrego.com" method="POST">
+        <form id="contact-form" action="https://formsubmit.co/contact@christopherrego.com" method="POST">
           <input type="hidden" name="_subject" value="New portfolio contact form message" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_next" value="https://christopherrego.com/#contact" />
 
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Your full name" required />
@@ -137,7 +136,6 @@
         <h2>Quick Contact</h2>
         <p>Email: youremail@example.com</p>
         <p><a href="https://www.linkedin.com/in/christopher-rego-076657205/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-        <p>GitHub: github.com/yourname</p>
       </article>
     </section>
 
@@ -146,14 +144,19 @@
       <a href="#home">Back to Top</a>
     </footer>
   </div>
+  <div id="toast" class="toast" aria-live="polite"></div>
 
   <script>
     const body = document.body;
     const navToggle = document.getElementById("nav-toggle");
     const navLinks = document.getElementById("nav-links");
     const links = navLinks.querySelectorAll("a");
+    const contactForm = document.getElementById("contact-form");
+    const toast = document.getElementById("toast");
+    const submitButton = contactForm.querySelector("button[type='submit']");
     const mobileTransitionStart = 170;
     const mobileTransitionEnd = 320;
+    let toastTimer;
 
     function updateMobileNavMode() {
       const isMobile = window.innerWidth <= 700;
@@ -196,6 +199,44 @@
         body.classList.remove("menu-open");
         navToggle.setAttribute("aria-expanded", "false");
       });
+    });
+
+    function showToast(message, isError = false) {
+      clearTimeout(toastTimer);
+      toast.textContent = message;
+      toast.classList.toggle("error", isError);
+      toast.classList.add("show");
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3200);
+    }
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error("Form request failed");
+        }
+
+        contactForm.reset();
+        showToast("Message sent successfully.");
+      } catch (error) {
+        showToast("Could not send message. Please try again.", true);
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send";
+      }
     });
 
     window.addEventListener("scroll", () => {
