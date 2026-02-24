@@ -158,14 +158,23 @@
     const navToggle = document.getElementById("nav-toggle");
     const navLinks = document.getElementById("nav-links");
     const links = navLinks.querySelectorAll("a");
+    const mobileTransitionStart = 170;
+    const mobileTransitionEnd = 320;
 
     function updateMobileNavMode() {
       const isMobile = window.innerWidth <= 700;
-      const scrolledFar = window.scrollY > 260;
+      const y = window.scrollY;
+      const progress = isMobile
+        ? Math.min(Math.max((y - mobileTransitionStart) / (mobileTransitionEnd - mobileTransitionStart), 0), 1)
+        : 0;
+      const isTransitioning = isMobile && progress > 0 && progress < 1;
+      const isCompact = isMobile && progress >= 1;
 
-      if (isMobile && scrolledFar) {
-        body.classList.add("mobile-compact");
-      } else {
+      body.style.setProperty("--nav-collapse-progress", progress.toFixed(3));
+      body.classList.toggle("mobile-transition", isTransitioning);
+      body.classList.toggle("mobile-compact", isCompact);
+
+      if (!isCompact) {
         body.classList.remove("mobile-compact", "menu-open");
         navToggle.setAttribute("aria-expanded", "false");
       }

@@ -10,6 +10,7 @@
   --blur: 12px;
   --radius: 16px;
   --radius-sm: 10px;
+  --nav-collapse-progress: 0;
 }
 
 * {
@@ -311,18 +312,40 @@ footer a:hover {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+    overflow: hidden;
+    max-height: 220px;
+    opacity: calc(1 - var(--nav-collapse-progress));
+    transform: translateY(calc(var(--nav-collapse-progress) * -10px));
+    transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.25s ease;
   }
 
   .hero {
     padding-top: 1.5rem;
   }
 
-  .mobile-compact .nav-toggle {
+  .nav-toggle {
     display: inline-flex;
+    opacity: var(--nav-collapse-progress);
+    transform: scale(calc(0.92 + (var(--nav-collapse-progress) * 0.08)));
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+  }
+
+  .mobile-transition .nav-links {
+    pointer-events: none;
+  }
+
+  .mobile-compact .nav-toggle {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
   }
 
   .mobile-compact .nav-links {
-    display: none;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
   }
 
   .mobile-compact.menu-open .nav-links {
@@ -338,6 +361,10 @@ footer a:hover {
     backdrop-filter: blur(var(--blur));
     -webkit-backdrop-filter: blur(var(--blur));
     gap: 0.5rem;
+    max-height: 320px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .mobile-compact.menu-open .nav-links li {
