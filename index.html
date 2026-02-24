@@ -71,7 +71,7 @@
     <section class="title-block" id="resume">
       <h2 class="page-title">Resume</h2>
       <div class="buttons">
-        <a href="resume.pdf" class="btn btn-primary" download target="_blank" rel="noopener noreferrer">Download Resume</a>
+        <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
       </div>
     </section>
 
@@ -115,7 +115,11 @@
     <section class="grid">
       <article class="card">
         <h2>Send a Message</h2>
-        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+        <form action="https://formsubmit.co/contact@christopherrego.com" method="POST">
+          <input type="hidden" name="_subject" value="New portfolio contact form message" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Your full name" required />
 
@@ -131,7 +135,7 @@
       <article class="card">
         <h2>Quick Contact</h2>
         <p>Email: youremail@example.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/christopher-rego-076657205/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        <p><a href="https://www.linkedin.com/in/christopher-rego-076657205/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
         <p>GitHub: github.com/yourname</p>
       </article>
     </section>
