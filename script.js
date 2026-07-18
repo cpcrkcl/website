@@ -61,15 +61,6 @@
     revealEls.forEach((el) => el.classList.add("in-view"));
   }
 
-  /* card spotlight follows the cursor */
-  document.querySelectorAll(".card").forEach((card) => {
-    card.addEventListener("pointermove", (event) => {
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
-      card.style.setProperty("--my", `${event.clientY - rect.top}px`);
-    });
-  });
-
   /* rotating word in the hero */
   const swapWord = document.querySelector(".swap-word");
   if (swapWord) {
