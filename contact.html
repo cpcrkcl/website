@@ -6,17 +6,23 @@
   <title>Contact | Christopher Rego</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-pattern"></div>
-  <div class="bg-grid"></div>
+  <div class="sky" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
   <div class="container">
     <nav>
       <a href="index.html" class="logo">Christopher Rego</a>
-      <ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        &#9776;
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
         <li><a href="resume.html">Resume</a></li>
@@ -25,7 +31,8 @@
     </nav>
 
     <section class="title-block">
-      <h1 class="page-title">Contact</h1>
+      <span class="eyebrow">Contact</span>
+      <h1 class="page-title">Let's <span class="grad-text">Talk</span></h1>
       <p class="page-subtitle">
         I would love to connect about internships, student opportunities, legal
         interests, and collaborative projects.
@@ -33,9 +40,10 @@
     </section>
 
     <section class="grid">
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#128233;</span>
         <h2>Send a Message</h2>
-        <form action="https://formsubmit.co/contact@christopherrego.com" method="POST">
+        <form id="contact-form" action="https://formsubmit.co/contact@christopherrego.com" method="POST">
           <input type="hidden" name="_subject" value="New portfolio contact form message" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
@@ -49,11 +57,12 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Tell me a little about your message..." required></textarea>
 
-          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#128279;</span>
         <h2>Quick Contact</h2>
         <p>Email: <a href="mailto:contact@christopherrego.com">contact@christopherrego.com</a></p>
         <p><a href="https://www.linkedin.com/in/christopher-rego-076657205/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
@@ -62,8 +71,11 @@
 
     <footer>
       <p>&copy; 2026 Christopher Rego. Student Portfolio.</p>
-      <a href="resume.html">Back to Resume</a>
+      <a href="resume.html">Back to Resume &#8594;</a>
     </footer>
   </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="script.js"></script>
 </body>
 </html>

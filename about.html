@@ -6,17 +6,23 @@
   <title>About Me | Christopher Rego</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-pattern"></div>
-  <div class="bg-grid"></div>
+  <div class="sky" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
   <div class="container">
     <nav>
       <a href="index.html" class="logo">Christopher Rego</a>
-      <ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        &#9776;
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About Me</a></li>
         <li><a href="resume.html">Resume</a></li>
@@ -25,7 +31,8 @@
     </nav>
 
     <section class="title-block">
-      <h1 class="page-title">About Me</h1>
+      <span class="eyebrow">About</span>
+      <h1 class="page-title">About <span class="grad-text">Me</span></h1>
       <p class="page-subtitle">
         I am a psychology student interested in political and moral psychology,
         civil law, constitutional law, and meaningful collaborative work.
@@ -33,7 +40,8 @@
     </section>
 
     <section class="grid">
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#129504;</span>
         <h2>Who I Am</h2>
         <p>
           I enjoy learning how people think, make ethical decisions, and work
@@ -42,7 +50,8 @@
         </p>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#127891;</span>
         <h2>Education Focus</h2>
         <p>
           My current focus includes law school preparation, psychology coursework,
@@ -51,7 +60,8 @@
         </p>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#10024;</span>
         <h2>Interests</h2>
         <ul>
           <li>Moral psychology and ethical psychology</li>
@@ -64,8 +74,10 @@
 
     <footer>
       <p>&copy; 2026 Christopher Rego. Student Portfolio.</p>
-      <a href="contact.html">Contact Me</a>
+      <a href="contact.html">Contact Me &#8594;</a>
     </footer>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

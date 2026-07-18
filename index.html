@@ -6,12 +6,15 @@
   <title>Christopher Rego | Student Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-pattern"></div>
-  <div class="bg-grid"></div>
+  <div class="sky" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
   <div class="container">
     <nav id="site-nav">
@@ -28,32 +31,56 @@
     </nav>
 
     <section class="hero" id="home">
-      <h1>Christopher Rego</h1>
-      <p>
-        Psychology student, future law student, and curious builder of thoughtful projects.
-      </p>
-      <div class="buttons">
-        <a href="#about" class="btn btn-primary">About Me</a>
-        <a href="#resume" class="btn btn-glass">View Resume</a>
+      <div>
+        <span class="badge"><span class="dot"></span> Open to internships &amp; collaboration</span>
+        <h1>Hey, I'm <span class="grad-text">Christopher</span> <span class="wave">&#128075;</span></h1>
+        <p>
+          Psychology student, future law student, and curious builder of
+          <span class="swap-word" data-words='["thoughtful projects","big ideas","legal arguments","new skills"]'>thoughtful projects</span>.
+        </p>
+        <div class="buttons">
+          <a href="#about" class="btn btn-primary">Get to Know Me</a>
+          <a href="#resume" class="btn btn-glass">View Resume</a>
+        </div>
       </div>
     </section>
 
-    <section class="title-block" id="about">
-      <h2 class="page-title">About Me</h2>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Psychology</span>
+        <span>Constitutional Law</span>
+        <span>Moral Philosophy</span>
+        <span>Java &amp; Python</span>
+        <span>History</span>
+        <span>Ohio State</span>
+        <span>Psychology</span>
+        <span>Constitutional Law</span>
+        <span>Moral Philosophy</span>
+        <span>Java &amp; Python</span>
+        <span>History</span>
+        <span>Ohio State</span>
+      </div>
+    </div>
+
+    <section class="title-block reveal" id="about">
+      <span class="eyebrow">01 &mdash; About</span>
+      <h2 class="page-title">About <span class="grad-text">Me</span></h2>
     </section>
 
     <section class="grid">
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#129504;</span>
         <h2>Who I Am</h2>
         <p>
           I enjoy learning about political and moral psychology
           with an interest in civil law and constitutional law.
-          I value consistency, reliability, and communication in 
+          I value consistency, reliability, and communication in
           every project.
         </p>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#127891;</span>
         <h2>Academic Focus</h2>
         <p>
           My focus includes law school preparation, classes, and
@@ -62,7 +89,8 @@
         </p>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#10024;</span>
         <h2>Interests</h2>
         <ul>
           <li>Moral psychology and ethical psychology</li>
@@ -72,15 +100,17 @@
       </article>
     </section>
 
-    <section class="title-block" id="resume">
-      <h2 class="page-title">Resume</h2>
+    <section class="title-block reveal" id="resume">
+      <span class="eyebrow">02 &mdash; Resume</span>
+      <h2 class="page-title">My <span class="grad-text">Journey</span></h2>
       <div class="buttons">
-        <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+        <a href="resume.pdf" class="btn btn-primary" download>Download Resume &#8595;</a>
       </div>
     </section>
 
     <section class="grid">
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#128218;</span>
         <h2>Education</h2>
         <div class="timeline-item">
           <h3>The Ohio State University</h3>
@@ -90,7 +120,8 @@
           <p>Relevant Coursework: PSYCH 3900, PHILOS 1501, RELSTDS 3680</p>
         </div>
       </article>
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#128188;</span>
         <h2>Experience</h2>
         <div class="timeline-item">
           <h3>Circulation Desk Attendant</h3>
@@ -102,23 +133,29 @@
           </ul>
         </div>
       </article>
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#9889;</span>
         <h2>Skills</h2>
-        <ul>
-          <li>Java and Python</li>
-          <li>Organization and Time Management</li>
-          <li>Problem-solving </li>
-          <li>Communication and teamwork</li>
-        </ul>
+        <div class="chips">
+          <span class="chip">Java</span>
+          <span class="chip">Python</span>
+          <span class="chip">Organization</span>
+          <span class="chip">Time Management</span>
+          <span class="chip">Problem-solving</span>
+          <span class="chip">Communication</span>
+          <span class="chip">Teamwork</span>
+        </div>
       </article>
     </section>
 
-    <section class="title-block" id="contact">
-      <h2 class="page-title">Contact</h2>
+    <section class="title-block reveal" id="contact">
+      <span class="eyebrow">03 &mdash; Contact</span>
+      <h2 class="page-title">Let's <span class="grad-text">Talk</span></h2>
     </section>
 
     <section class="grid">
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#128233;</span>
         <h2>Send a Message</h2>
         <form id="contact-form" action="https://formsubmit.co/contact@christopherrego.com" method="POST">
           <input type="hidden" name="_subject" value="New portfolio contact form message" />
@@ -134,10 +171,11 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Tell me a little about your message..." required></textarea>
 
-          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </article>
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#128279;</span>
         <h2>Quick Contact</h2>
         <p>Email: <a href="mailto:contact@christopherrego.com">contact@christopherrego.com</a></p>
         <p><a href="https://www.linkedin.com/in/christopher-rego-076657205/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
@@ -146,112 +184,11 @@
 
     <footer>
       <p>&copy; 2026 Christopher Rego. Student Portfolio.</p>
-      <a href="#home">Back to Top</a>
+      <a href="#home">Back to Top &#8593;</a>
     </footer>
   </div>
+
   <div id="toast" class="toast" aria-live="polite"></div>
-
-  <script>
-    const body = document.body;
-    const navToggle = document.getElementById("nav-toggle");
-    const navLinks = document.getElementById("nav-links");
-    const links = navLinks.querySelectorAll("a");
-    const contactForm = document.getElementById("contact-form");
-    const toast = document.getElementById("toast");
-    const submitButton = contactForm.querySelector("button[type='submit']");
-    const mobileTransitionStart = 170;
-    const mobileTransitionEnd = 320;
-    let toastTimer;
-
-    function updateMobileNavMode() {
-      const isMobile = window.innerWidth <= 700;
-      const y = window.scrollY;
-      const progress = isMobile
-        ? Math.min(Math.max((y - mobileTransitionStart) / (mobileTransitionEnd - mobileTransitionStart), 0), 1)
-        : 0;
-      const isTransitioning = isMobile && progress > 0 && progress < 1;
-      const isCompact = isMobile && progress >= 1;
-
-      body.style.setProperty("--nav-collapse-progress", progress.toFixed(3));
-      body.classList.toggle("mobile-transition", isTransitioning);
-      body.classList.toggle("mobile-compact", isCompact);
-
-      if (!isCompact) {
-        body.classList.remove("mobile-compact", "menu-open");
-        navToggle.setAttribute("aria-expanded", "false");
-      }
-    }
-
-    function setActiveLink() {
-      const fromTop = window.scrollY + 140;
-      links.forEach((link) => {
-        const section = document.querySelector(link.getAttribute("href"));
-        if (!section) return;
-        const inSection =
-          section.offsetTop <= fromTop &&
-          section.offsetTop + section.offsetHeight > fromTop;
-        link.classList.toggle("active", inSection);
-      });
-    }
-
-    navToggle.addEventListener("click", () => {
-      const isOpen = body.classList.toggle("menu-open");
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    links.forEach((link) => {
-      link.addEventListener("click", () => {
-        body.classList.remove("menu-open");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    function showToast(message, isError = false) {
-      clearTimeout(toastTimer);
-      toast.textContent = message;
-      toast.classList.toggle("error", isError);
-      toast.classList.add("show");
-      toastTimer = setTimeout(() => {
-        toast.classList.remove("show");
-      }, 3200);
-    }
-
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-
-      try {
-        const response = await fetch(contactForm.action, {
-          method: "POST",
-          body: new FormData(contactForm),
-          headers: {
-            Accept: "application/json"
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error("Form request failed");
-        }
-
-        contactForm.reset();
-        showToast("Message sent successfully!");
-      } catch (error) {
-        showToast("Could not send message. Please try again.", true);
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = "Send";
-      }
-    });
-
-    window.addEventListener("scroll", () => {
-      updateMobileNavMode();
-      setActiveLink();
-    });
-    window.addEventListener("resize", updateMobileNavMode);
-
-    updateMobileNavMode();
-    setActiveLink();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

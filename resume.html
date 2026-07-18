@@ -6,17 +6,23 @@
   <title>Resume | Christopher Rego</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-pattern"></div>
-  <div class="bg-grid"></div>
+  <div class="sky" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
   <div class="container">
     <nav>
       <a href="index.html" class="logo">Christopher Rego</a>
-      <ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        &#9776;
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
         <li><a href="resume.html" class="active">Resume</a></li>
@@ -25,17 +31,19 @@
     </nav>
 
     <section class="title-block">
-      <h1 class="page-title">Resume</h1>
+      <span class="eyebrow">Resume</span>
+      <h1 class="page-title">My <span class="grad-text">Journey</span></h1>
       <p class="page-subtitle">
         A snapshot of my academic background, work experience, and core skills.
       </p>
-      <p>
-        <a href="resume.pdf" class="btn btn-primary" download>Download PDF Resume</a>
-      </p>
+      <div class="buttons">
+        <a href="resume.pdf" class="btn btn-primary" download>Download PDF Resume &#8595;</a>
+      </div>
     </section>
 
     <section class="grid">
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#128218;</span>
         <h2>Education</h2>
         <div class="timeline-item">
           <h3>The Ohio State University</h3>
@@ -46,7 +54,8 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#128188;</span>
         <h2>Experience</h2>
         <div class="timeline-item">
           <h3>Circulation Desk Attendant</h3>
@@ -59,21 +68,27 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
+        <span class="card-icon">&#9889;</span>
         <h2>Skills</h2>
-        <ul>
-          <li>Java and Python</li>
-          <li>Organization and time management</li>
-          <li>Problem-solving</li>
-          <li>Communication and teamwork</li>
-        </ul>
+        <div class="chips">
+          <span class="chip">Java</span>
+          <span class="chip">Python</span>
+          <span class="chip">Organization</span>
+          <span class="chip">Time Management</span>
+          <span class="chip">Problem-solving</span>
+          <span class="chip">Communication</span>
+          <span class="chip">Teamwork</span>
+        </div>
       </article>
     </section>
 
     <footer>
       <p>&copy; 2026 Christopher Rego. Student Portfolio.</p>
-      <a href="contact.html">Contact Me</a>
+      <a href="contact.html">Contact Me &#8594;</a>
     </footer>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
