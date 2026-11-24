@@ -36,7 +36,7 @@
         showToast("Could not send message. Please try again.", true);
       } finally {
         submitButton.disabled = false;
-        submitButton.textContent = "Send Message";
+        submitButton.textContent = "Send message";
       }
     });
   }
